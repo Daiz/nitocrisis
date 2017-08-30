@@ -25,6 +25,9 @@ const w = window;
 - move assets to App module instead of store?
 - Webpack hot reloading for Nitos
 - Improved Asset Loading (partial loading)
+- Document everything
+- Unit tests?
+- Fullscreen support
 - Texture atlas generator for production
 - Sound sprite generator for production
   * FLAC encoding, Opus encoding, MP3 encoding
