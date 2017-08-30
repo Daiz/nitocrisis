@@ -31,9 +31,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  &.active:hover {
-    cursor: pointer;
-  }
+  will-change: transform, opacity;
 }
 
 div {
