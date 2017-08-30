@@ -1,0 +1,103 @@
+@import "colors.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  &.active:hover {
+    cursor: pointer;
+  }
+}
+
+div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: monospace;
+  padding: 1rem;
+  font-size: 2.5rem;
+  color: $text;
+  user-select: none;
+  z-index: 3;
+  pointer-events: none;
+}
+
+#title {
+  text-align: left;
+  span {
+    opacity: 0.5;
+  }
+}
+
+#subtitle,
+#record {
+  font-size: 1.25rem;
+  padding: 3.5rem 1.125rem;
+  color: $score;
+}
+
+#subtitle {
+  a,
+  a:active,
+  a:visited {
+    pointer-events: all;
+    color: $link;
+  }
+}
+
+#score {
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+#record {
+  text-align: center;
+  &.blink {
+    color: $record;
+    animation: blink 1s steps(2, start) infinite;
+  }
+}
+
+#misses {
+  text-align: right;
+  color: $cross;
+  text-shadow: 0 0 0.2rem fade-out($cross, 0.5);
+  font-size: 3rem;
+  padding: 0.33rem 0.5rem;
+  font-weight: bolder;
+  letter-spacing: 0.25em;
+}
