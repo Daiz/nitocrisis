@@ -6,6 +6,5 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 80,
   "files.insertFinalNewline": true,
-  "tslint.autoFixOnSave": true,
-  "python.promptToInstallJupyter": false
+  "tslint.autoFixOnSave": true
 }
