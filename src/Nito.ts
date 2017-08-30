@@ -31,16 +31,16 @@ export default class Nito {
   angle: number;
   opacity: number;
   state: Cris;
+  el: HTMLImageElement;
+  timeScale: number;
+  dt: number = 0;
+  smackDirection: number;
   minX: number;
   maxX: number;
   minY: number;
   maxY: number;
   timer: number;
-  el: HTMLImageElement;
   targetY: number;
-  smackDirection: number;
-  timeScale: number;
-  dt: number = 0;
 
   constructor(props: NitoProps = {}) {
     const img = store.images!.nito;
@@ -109,7 +109,7 @@ export default class Nito {
         }
 
         if (this.timer <= 0) {
-          this.el.className = "active";
+          this.el.style.cursor = "pointer";
           this.state = Cris.Jumping;
           this.vx = -100 + random() * 200;
           this.vy = -1000 - random() * 750;
@@ -163,6 +163,18 @@ export default class Nito {
       this.y += diffY;
       this.targetY += diffY;
     }
+  }
+
+  smack() {
+    this.state = Cris.Smacked;
+    this.smackDirection = this.vx > 0 ? 1 : -1;
+    this.vx *= 1.25;
+    this.vy *= 0.5;
+    this.el.style.pointerEvents = "none";
+    this.el.style.zIndex = "1";
+    this.el.style.cursor = "";
+    store.sounds!.hit.play();
+    store.add("score");
   }
 
   render() {

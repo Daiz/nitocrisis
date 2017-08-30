@@ -59,15 +59,7 @@ export default class App {
           y = e.touches[0].clientY;
         }
         if (inbound(x, y, nito)) {
-          nito.state = Cris.Smacked;
-          nito.smackDirection = nito.vx > 0 ? 1 : -1;
-          nito.vx *= 1.25;
-          nito.vy *= 0.5;
-          nito.el.style.pointerEvents = "none";
-          nito.el.style.zIndex = "1";
-          nito.el.className = "";
-          store.sounds!.hit.play();
-          store.add("score");
+          nito.smack();
           break;
         }
       }
