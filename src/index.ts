@@ -29,7 +29,10 @@ const w = window;
 - Unit tests?
 - Fullscreen support
 - Texture atlas generator for production
+  * Image object wrapper for supporting both individual images & atlases
+  * Code generation
 - Sound sprite generator for production
+  * Sound object wrapper for supporting both individual files & sprites 
   * FLAC encoding, Opus encoding, MP3 encoding
   * Code generation
 */
